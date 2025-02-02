@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patricio Sardelli - Homenaje</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(45deg, #000000, #1a1a1a);
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #ff0000;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ff0000;
+        }
+
+        .contenedor {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .titulo-principal {
+            font-size: 3em;
+            color: #ff0000;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .imagen-principal {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            margin: 20px 0;
+        }
+
+        .biografia {
+            line-height: 1.8;
+            font-size: 1.2em;
+            text-align: justify;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            border: 1px solid #ff0000;
+        }
+
+        .music-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #ff0000;
+            background: #000000;
+            color: #ff0000;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        #player { display: none; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Historia</a>
+        <a href="discografia.html" class="nav-link">Discografía</a>
+    </nav>
+
+    <div class="contenedor">
+        <header class="header">
+            <h1 class="titulo-principal">Patricio Sardelli</h1>
+            <img src="ruta/imagen-pato.jpg" alt="Patricio Sardelli" class="imagen-principal">
+        </header>
+
+        <section class="biografia">
+            <h2>Historia</h2>
+            <p>
+                Patricio Sardelli, nacido en Buenos Aires, Argentina, es el vocalista principal 
+                y guitarrista de la banda Airbag. Junto a sus hermanos Guido y Gastón, formó 
+                la banda en 1999, convirtiéndose en una de las bandas más influyentes del rock 
+                argentino.
+            </p>
+            <p>
+                Su estilo único de guitarra y su voz distintiva han sido fundamentales en el 
+                sonido característico de Airbag, fusionando el rock clásico con elementos 
+                modernos.
+            </p>
+            <!-- Continuar con más contenido biográfico -->
+        </section>
+    </div>
+
+    <button onclick="toggleMusic()" class="music-btn" id="musicBtn">🎵</button>
+    <div id="player"></div>
+
+    <script>
+        // [Mismo código de JavaScript para la música que usamos antes]
+    </script>
+</body>
+</html>
