@@ -108,7 +108,7 @@
     <div class="contenedor">
         <header class="header">
             <h1 class="titulo-principal">Patricio Sardelli</h1>
-            <img src="ruta/imagen-pato.jpg" alt="Patricio Sardelli" class="imagen-principal">
+            <img src="assets/images/pato1.jpg" alt="Patricio Sardelli" class="imagen-principal">
         </header>
 
         <section class="biografia">
@@ -124,7 +124,6 @@
                 sonido característico de Airbag, fusionando el rock clásico con elementos 
                 modernos.
             </p>
-            <!-- Continuar con más contenido biográfico -->
         </section>
     </div>
 
@@ -132,20 +131,19 @@
     <div id="player"></div>
 
     <script>
-        var player;
-        var isPlaying = false; // Cambiado a false inicialmente
-    
+        let player;
+        let isPlaying = false;
+
+        // Función que se llama automáticamente cuando la API de YouTube está lista
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 height: '0',
                 width: '0',
                 videoId: '--kCD9UyhuE',
                 playerVars: {
-                    'autoplay': 0, // Cambiado a 0
+                    'playsinline': 1,
                     'controls': 0,
-                    'start': 177,
-                    'loop': 1,
-                    'mute': 0  // Cambiado a 0
+                    'start': 177
                 },
                 events: {
                     'onReady': onPlayerReady,
@@ -153,19 +151,23 @@
                 }
             });
         }
-    
+
+        // Cuando el reproductor está listo
         function onPlayerReady(event) {
-            // No intentamos reproducir automáticamente
-            document.getElementById('musicBtn').innerHTML = '🎵';
+            // El reproductor está listo para recibir comandos
+            console.log("Reproductor listo");
         }
-    
+
+        // Cuando cambia el estado del reproductor
         function onPlayerStateChange(event) {
             if (event.data == YT.PlayerState.ENDED) {
+                // Cuando termina la canción, volver al minuto 2:57
                 player.seekTo(177);
                 player.playVideo();
             }
         }
-    
+
+        // Función para alternar la reproducción
         function toggleMusic() {
             if (!isPlaying) {
                 player.playVideo();
