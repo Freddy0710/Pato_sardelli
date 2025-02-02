@@ -132,7 +132,51 @@
     <div id="player"></div>
 
     <script>
-        // [Mismo código de JavaScript para la música que usamos antes]
+        var player;
+        var isPlaying = false; // Cambiado a false inicialmente
+    
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '0',
+                width: '0',
+                videoId: '--kCD9UyhuE',
+                playerVars: {
+                    'autoplay': 0, // Cambiado a 0
+                    'controls': 0,
+                    'start': 177,
+                    'loop': 1,
+                    'mute': 0  // Cambiado a 0
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+    
+        function onPlayerReady(event) {
+            // No intentamos reproducir automáticamente
+            document.getElementById('musicBtn').innerHTML = '🎵';
+        }
+    
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                player.seekTo(177);
+                player.playVideo();
+            }
+        }
+    
+        function toggleMusic() {
+            if (!isPlaying) {
+                player.playVideo();
+                document.getElementById('musicBtn').innerHTML = '⏸️';
+                isPlaying = true;
+            } else {
+                player.pauseVideo();
+                document.getElementById('musicBtn').innerHTML = '🎵';
+                isPlaying = false;
+            }
+        }
     </script>
 </body>
 </html>
