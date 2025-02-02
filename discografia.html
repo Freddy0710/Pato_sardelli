@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patricio Sardelli - Discografía</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(45deg, #000000, #1a1a1a);
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #ff0000;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ff0000;
+        }
+
+        .contenedor {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        .titulo-seccion {
+            color: #ff0000;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .grid-albums {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .album {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #ff0000;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .album:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .album-cover {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .album-title {
+            color: #ff0000;
+            font-size: 1.3em;
+            margin: 10px 0;
+        }
+
+        .album-year {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .canciones-populares {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #ff0000;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .cancion {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+
+        .cancion:hover {
+            background: rgba(255, 0, 0, 0.1);
+        }
+
+        .numero {
+            font-size: 1.5em;
+            color: #ff0000;
+            margin-right: 20px;
+            min-width: 30px;
+        }
+
+        .info-cancion {
+            flex-grow: 1;
+        }
+
+        .nombre-cancion {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .album-info {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .reproducciones {
+            color: #888;
+            font-size: 0.9em;
+            margin-left: 20px;
+        }
+
+        .logros {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #ff0000;
+            border-radius: 15px;
+        }
+
+        .logro-item {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 3px solid #ff0000;
+            background: rgba(255, 0, 0, 0.1);
+        }
+
+        .music-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #ff0000;
+            background: #000000;
+            color: #ff0000;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        #player { display: none; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Historia</a>
+        <a href="discografia.html" class="nav-link">Discografía</a>
+    </nav>
+
+    <div class="contenedor">
+        <h1 class="titulo-seccion">Discografía</h1>
+        
+        <div class="grid-albums">
+            <div class="album">
+                <img src="ruta/album1.jpg" alt="Álbum 1" class="album-cover">
+                <h3 class="album-title">Airbag</h3>
+                <p class="album-year">2004</p>
+            </div>
+            <!-- Repetir para cada álbum -->
+        </div>
+
+        <section class="canciones-populares">
+            <h2 class="titulo-seccion">Canciones Más Populares</h2>
+            
+            <div class="cancion">
+                <span class="numero">1</span>
+                <div class="info-cancion">
+                    <div class="nombre-cancion">Cae el Sol</div>
+                    <div class="album-info">Álbum: Al Parecer Todo Ha Sido Una Trampa</div>
+                </div>
+                <span class="reproducciones">10M reproducciones</span>
+            </div>
+            <!-- Repetir para cada canción -->
+        </section>
+
+        <section class="logros">
+            <h2 class="titulo-seccion">Logros y Reconocimientos</h2>
+            
+            <div class="logro-item">
+                <h3>Premio Gardel</h3>
+                <p>Mejor Álbum de Rock - 2021</p>
+            </div>
+            <!-- Repetir para cada logro -->
+        </section>
+    </div>
+
+    <button onclick="toggleMusic()" class="music-btn" id="musicBtn">🎵</button>
+    <div id="player"></div>
+
+    <script>
+        var player;
+        var isPlaying = true;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '0',
+                width: '0',
+                videoId: '--kCD9UyhuE',
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'start': 177,
+                    'loop': 1,
+                    'mute': 1
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+            setTimeout(function() {
+                player.unMute();
+                document.getElementById('musicBtn').innerHTML = '⏸️';
+            }, 1000);
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                player.seekTo(177);
+                player.playVideo();
+            }
+        }
+
+        function toggleMusic() {
+            if (!isPlaying) {
+                player.playVideo();
+                player.unMute();
+                document.getElementById('musicBtn').innerHTML = '⏸️';
+                isPlaying = true;
+            } else {
+                player.pauseVideo();
+                document.getElementById('musicBtn').innerHTML = '🎵';
+                isPlaying = false;
+            }
+        }
+
+        document.addEventListener('click', function firstClick() {
+            player.unMute();
+            document.removeEventListener('click', firstClick);
+        }, { once: true });
+    </script>
+</body>
+</html>
