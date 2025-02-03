@@ -32,7 +32,7 @@
             opacity: 0;
             background-size: cover;
             background-position: center;
-            transition: opacity 2s ease-in-out;
+            transition: opacity 1s ease-in-out;
             filter: brightness(0.2);
         }
 
@@ -91,17 +91,12 @@
 
         .imagen-principal {
             width: 100%; /* Mantiene la imagen responsiva */
-            max-width: 400px; /* Cambiado a la mitad del tamaño original */
+            max-width: 800px; /* Cambiado a la mitad del tamaño original */
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
             margin: 20px auto;
             display: block;
             transition: all 0.3s ease;
-        }
-
-        .imagen-principal:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
         }
 
         .biografia {
@@ -163,6 +158,28 @@
         }
 
         #player { display: none; }
+
+        .video-container {
+            margin-top: 50px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .video-title {
+            font-size: 1.5em;
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+            border-radius: 15px;
+        }
     </style>
 </head>
 <body>
@@ -182,9 +199,12 @@
     <div class="contenedor">
         <header class="header">
             <h1 class="titulo-principal">Patricio Sardelli</h1>
-            <img src="Pato/Pato1.jpg" 
-                 alt="Patricio Sardelli" 
-                 class="imagen-principal">
+            <div class="imagen-principal">
+                <div class="album-slide active" style="background-image: url('Pato/Pato1.jpg')"></div>
+                <div class="album-slide" style="background-image: url('Pato/Pato2.jpg')"></div>
+                <div class="album-slide" style="background-image: url('Pato/Pato3.jpg')"></div>
+                <div class="album-slide" style="background-image: url('Pato/Pato4.jpg')"></div>
+            </div>
         </header>
 
         <section class="biografia">
@@ -214,6 +234,11 @@
         <img src="Pato/Abun3.jpg" alt="Reproducir música">
     </button>
     <div id="player"></div>
+
+    <div class="video-container">
+        <h2 class="video-title">Su lado humilde 😝</h2>
+        <iframe src="https://www.youtube.com/embed/MAy-3Xm6uXE" allowfullscreen></iframe>
+    </div>
 
     <script>
         let player;
@@ -268,7 +293,7 @@
         }
 
         slides[0].classList.add('active');
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 4000); // Cambia cada 4 segundos
     </script>
 </body>
 </html>
